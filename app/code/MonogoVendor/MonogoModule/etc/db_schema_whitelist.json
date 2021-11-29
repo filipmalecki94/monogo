@@ -1,0 +1,29 @@
+{
+    "monogo_city_weather": {
+        "column": {
+            "id": true,
+            "city": true,
+            "weather_id": true,
+            "main": true,
+            "description": true,
+            "icon": true,
+            "temperature": true,
+            "feels_like": true,
+            "pressure": true,
+            "wind_speed": true,
+            "clouds": true,
+            "snow": true,
+            "rain": true,
+            "sunrise": true,
+            "sunset": true,
+            "created_at": true
+        },
+        "index": {
+            "MONOGO_CITY_WEATHER_ID": true,
+            "MONOGO_CITY_WEATHER_CITY": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
