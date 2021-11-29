@@ -16,7 +16,7 @@
         <column xsi:type="float" name="snow" unsigned="true" nullable="true" comment="Snow volume for the last 1 hour"/>
         <column xsi:type="float" name="rain" unsigned="true" nullable="true" comment="Rain volume for the last 1 hour"/>
         <column xsi:type="timestamp" name="sunrise" nullable="true" on_update="false" comment="Sunrise time"/>
-        <column xsi:type="timestamp" name="sunset" nullable="false" on_update="false" comment="Sunset time"/>
+        <column xsi:type="timestamp" name="sunset" nullable="true" on_update="false" comment="Sunset time"/>
         <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
                 comment="Created At"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
