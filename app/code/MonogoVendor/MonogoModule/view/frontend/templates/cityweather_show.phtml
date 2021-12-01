@@ -1,0 +1,18 @@
+<?php
+/** @var MonogoVendor\MonogoModule\Block\CityWeatherShow $block */
+?>
+
+<div style="display: flex; flex-direction: column">
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+        <div style="font-size: 3em"><?php echo $block->escapeHtml($block->getCity()) ?></div>
+        <img src="<?= $block->escapeHtml($block->getIcon()) ?>" alt="weather_icon">
+    </div>
+    <div style="display: flex; justify-content: center; flex-direction: column;">
+        <?php foreach ($block->getWeatherData() as $param => $value): ?>
+            <div style="display: flex; justify-content: space-around; width: 40%; margin: 0 auto; padding: 5px 0; background: #f5f5f5">
+                <div style="width: 50%; text-align: center;"><?= $param ?></div>
+                <div style="width: 50%; text-align: center;"><?= $value ?></div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>

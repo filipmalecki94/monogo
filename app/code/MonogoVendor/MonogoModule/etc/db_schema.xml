@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="monogo_city_weather" resource="default" engine="innodb" comment="City weather">
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"/>
+        <column xsi:type="varchar" name="city" nullable="false" comment="City"/>
+        <column xsi:type="int" name="weather_id" unsigned="true" nullable="true" comment="API Weather ID"/>
+        <column xsi:type="varchar" name="main" nullable="true" comment="Main weather"/>
+        <column xsi:type="varchar" name="description" nullable="true" comment="Description"/>
+        <column xsi:type="varchar" name="icon" nullable="true" comment="Icon"/>
+        <column xsi:type="float" name="temperature" unsigned="false" nullable="false" comment="Temperature"/>
+        <column xsi:type="float" name="feels_like" unsigned="false" nullable="true" comment="Felt temperature"/>
+        <column xsi:type="int" name="pressure" unsigned="true" nullable="true" comment="Pressure"/>
+        <column xsi:type="float" name="wind_speed" unsigned="true" nullable="true" comment="Wind speed"/>
+        <column xsi:type="int" name="clouds" unsigned="true" nullable="true" comment="Cloudiness"/>
+        <column xsi:type="float" name="snow" unsigned="true" nullable="true" comment="Snow volume for the last 1 hour"/>
+        <column xsi:type="float" name="rain" unsigned="true" nullable="true" comment="Rain volume for the last 1 hour"/>
+        <column xsi:type="timestamp" name="sunrise" nullable="true" on_update="false" comment="Sunrise time"/>
+        <column xsi:type="timestamp" name="sunset" nullable="true" on_update="false" comment="Sunset time"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+        <index referenceId="MONOGO_CITY_WEATHER_CITY" indexType="btree">
+            <column name="city"/>
+        </index>
+    </table>
+</schema>

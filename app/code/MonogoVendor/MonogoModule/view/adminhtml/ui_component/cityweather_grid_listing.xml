@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">cityweather_grid_listing.cityweather_grid_listing_data_source</item>
+            <item name="deps" xsi:type="string">cityweather_grid_listing.cityweather_grid_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>cityweather_grid_listing_columns</spinner>
+        <deps>
+            <dep>cityweather_grid_listing.cityweather_grid_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="cityweather_grid_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>MonogoVendor_MonogoModule::management</aclResource>
+        <dataProvider class="MonogoVendor\MonogoModule\Model\Ui\Component\DataProvider\CityWeatherDataProvider" name="cityweather_grid_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="cityweather_grid_listing_columns">
+        <column name="id">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="city">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">City</label>
+            </settings>
+        </column>
+        <column name="weather_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">API Weather ID</label>
+            </settings>
+        </column>
+        <column name="main">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Main weather</label>
+            </settings>
+        </column>
+        <column name="description">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Description</label>
+            </settings>
+        </column>
+        <column name="icon">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Icon</label>
+            </settings>
+        </column>
+        <column name="temperature">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Temperature</label>
+            </settings>
+        </column>
+        <column name="feels_like">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Felt temperature</label>
+            </settings>
+        </column>
+        <column name="pressure">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Pressure</label>
+            </settings>
+        </column>
+        <column name="wind_speed">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Wind speed</label>
+            </settings>
+        </column>
+        <column name="clouds">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Cloudiness</label>
+            </settings>
+        </column>
+        <column name="snow">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Snow volume</label>
+            </settings>
+        </column>
+        <column name="rain">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Rain volume</label>
+            </settings>
+        </column>
+        <column name="sunrise">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Sunrise time</label>
+            </settings>
+        </column>
+        <column name="sunset">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Sunset time</label>
+            </settings>
+        </column>
+        <column name="created_at">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Created at</label>
+            </settings>
+        </column>
+    </columns>
+</listing>
