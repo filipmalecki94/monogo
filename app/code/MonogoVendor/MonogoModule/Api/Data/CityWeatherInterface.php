@@ -84,6 +84,25 @@ interface CityWeatherInterface
     public const FIELD_SUNSET = 'sunset';
 
     /**
+     * @var string[]
+     */
+    public const OPENWEATHER_MAPPING = [
+        'id' => self::FIELD_WEATHER_ID,
+        'main' => self::FIELD_MAIN,
+        'description' => self::FIELD_DESCRIPTION,
+        'icon' => self::FIELD_ICON,
+        'temp' => self::FIELD_TEMPERATURE,
+        'feels_like' => self::FIELD_FEELS_LIKE,
+        'pressure' => self::FIELD_PRESSURE,
+        'speed' => self::FIELD_WIND_SPEED,
+        'snow' => self::FIELD_SNOW,
+        'rain' => self::FIELD_RAIN,
+        'all' => self::FIELD_CLOUDS,
+        'sunrise' => self::FIELD_SUNRISE,
+        'sunset' => self::FIELD_SUNSET
+    ];
+
+    /**
      * @return int
      */
     public function getId(): int;
