@@ -22,9 +22,6 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
         </constraint>
-        <index referenceId="MONOGO_CITY_WEATHER_ID" indexType="btree">
-            <column name="id"/>
-        </index>
         <index referenceId="MONOGO_CITY_WEATHER_CITY" indexType="btree">
             <column name="city"/>
         </index>
